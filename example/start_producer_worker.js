@@ -5,8 +5,8 @@ var beanstalkd_config = require("../lib/config/beanstalkd_config");
 var ProducerWorker = require("../lib/producer_worker");
 var Seed = require("../lib/seed");
 
-//create seed and producer worker
-let seed = new Seed("USD", "HKD", 0, 0, 0);
+//create seed and initialize producer worker
+let seed = new Seed("USD", "HKD", 0, 0, 0, 60);
 let producer_worker = new ProducerWorker(beanstalkd_config);
 
 //put seed into tube
