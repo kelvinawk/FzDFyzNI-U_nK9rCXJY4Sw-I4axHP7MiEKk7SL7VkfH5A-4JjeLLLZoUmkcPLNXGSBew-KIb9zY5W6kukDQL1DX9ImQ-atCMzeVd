@@ -9,9 +9,36 @@ Code a currency exchagne rate `worker`
 3. If any problem during the get rate attempt, retry it delay with 3s
 4. If failed more than 3 times in total (not consecutive), bury the job.
 
-## Architecture
+## Requirement
+- Beanstalkd Message Queue
+- MongoDB
+- Node.js with ES6 support
+- npm
+
+## Design and Architecture
 
 ## Installation
-
+Download the project and install all dependencies with the following command:
+```
+npm install
+```
 ## Quick Start Guide
+####1. put seed into beanstalkd server using producer worker
 
+I have re-designed the payload format as following:
+```  
+{
+	"from": "HKD",
+	"to": "USD",
+	"success_count": 0,
+	"failure_count": 0,
+	"priority": 0,
+	"ttr": 60
+}
+```
+You may modify the payload in [start_producer_worker.js](/example/start_producer_worker.js) as you wanted, then run the following command to put seed into beanstalkd server:
+```
+node example/start_producer_worker.js
+```
+
+###2. run the consumer worker to execute the job
