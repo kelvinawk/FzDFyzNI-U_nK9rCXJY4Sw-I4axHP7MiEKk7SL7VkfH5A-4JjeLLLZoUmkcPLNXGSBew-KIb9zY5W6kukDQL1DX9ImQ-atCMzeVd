@@ -16,6 +16,7 @@ Code a currency exchagne rate `worker`
 - npm
 
 ## Design and Architecture
+(/architecture.png)
 
 ## Installation
 Download the project and install all dependencies with the following command:
@@ -36,9 +37,13 @@ I have re-designed the payload format as following:
 	"ttr": 60
 }
 ```
-You may modify the payload in [start_producer_worker.js](/example/start_producer_worker.js) as you wanted, then run the following command to put seed into beanstalkd server:
+You may modify the payload in [start_producer_worker.js](/example/start_producer_worker.js) as you want, then run the following command to put seed into beanstalkd server:
 ```
 node example/start_producer_worker.js
 ```
 
-###2. run the consumer worker to execute the job
+###2. start the consumer worker to execute the job
+Execute the job with the payload by running the following command:
+```
+node example/start_consumer_worker.js
+```
