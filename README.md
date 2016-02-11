@@ -16,7 +16,7 @@ Code a currency exchagne rate `worker`
 - npm
 
 ## Design and Architecture
-(/architecture.png)
+![architecture](/architecture.png)
 
 ## Installation
 Download the project and install all dependencies with the following command:
@@ -47,3 +47,4 @@ Execute the job with the payload by running the following command:
 ```
 node example/start_consumer_worker.js
 ```
+You may edit the config in [handler_config.js](/lib/config/handler_config.js) to set up the success and failure attempt count and the time delay of reputting job into tube
