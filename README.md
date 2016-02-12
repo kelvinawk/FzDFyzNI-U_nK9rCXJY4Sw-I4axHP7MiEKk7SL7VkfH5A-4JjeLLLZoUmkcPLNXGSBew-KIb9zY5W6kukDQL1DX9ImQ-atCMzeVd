@@ -42,7 +42,7 @@ You may modify the payload in [start_producer_worker.js](/example/start_producer
 node example/start_producer_worker.js
 ```
 
-###2. start the consumer worker to execute the job
+####2. start the consumer worker to execute the job
 Execute the job with the payload by running the following command:
 ```
 node example/start_consumer_worker.js
