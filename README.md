@@ -42,9 +42,15 @@ You may modify the payload in [start_producer_worker.js](/example/start_producer
 node example/start_producer_worker.js
 ```
 
-###2. start the consumer worker to execute the job
+####2. start the consumer worker to execute the job
 Execute the job with the payload by running the following command:
 ```
 node example/start_consumer_worker.js
 ```
 You may edit the config in [handler_config.js](/lib/config/handler_config.js) to set up the success and failure attempt count and the time delay of reputting job into tube
+
+## Test
+Run the test case with the following command:
+```
+npm test
+```
